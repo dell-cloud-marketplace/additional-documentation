@@ -1,4 +1,3 @@
-additional-documentation
-========================
+# additional-documentation
 
-Additional documentation for Dell Cloud Marketplace content 
+Additional documentation for Dell Cloud Marketplace content.

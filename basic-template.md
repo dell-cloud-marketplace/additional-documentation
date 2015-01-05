@@ -25,7 +25,7 @@ Start your container with:
 As follows:
 
 ```no-highlight
-sudo docker run -d -p <ports> --name {image_name} dell/{image_name}
+sudo docker run -d -p {ports} --name {image_name} dell/{image_name}
 ```
 
 <a name="advanced-usage"></a>

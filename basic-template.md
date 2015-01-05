@@ -20,7 +20,7 @@ If you wish to create data volumes, which will survive a restart or recreation o
 Start your container with:
 
  - A named container (**{image_name}**).
- - Ports {ports_number, followed by application name} exposed.
+ - Ports {ports_number} ({application_name}) exposed.
 
 As follows:
 

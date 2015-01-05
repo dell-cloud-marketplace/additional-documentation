@@ -2,7 +2,7 @@
 This image installs [{image_name}]({image_official_website}), {image_description}
 
 ## Components
-The stack comprises the following components:
+The software stack comprises the following components:
 
 Name         | Version     | Description
 -------------|-------------|------------------
@@ -13,10 +13,10 @@ Component_N  | {version}   | {description}
 
 ## Usage
 
-### 1. Start the Container
+### Start the Container
 If you wish to create data volumes, which will survive a restart or recreation of the container, please follow the instructions in [Advanced Usage](#advanced-usage).
 
-#### A. Basic Usage
+#### Basic Usage
 Start your container with:
 
  - A named container (**{image_name}**).
@@ -29,11 +29,11 @@ sudo docker run -d -p {ports} --name {image_name} dell/{image_name}
 ```
 
 <a name="advanced-usage"></a>
-#### B. Advanced Usage
+#### Advanced Usage
 Start your container with:
 
 - A named container (**{image_name}**).
-- Ports {ports_number, followed by application name} exposed.
+- Ports {ports_number} ({application_name}) exposed.
 - {N} data volumes (which will survive a restart or recreation of the container). The {volume_1} is available in **{volume_1_path}** on the host. The {volume_N} is available in **{volume_N_path}** on the host. 
 - {variables_exposed} 
 

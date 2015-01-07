@@ -9,7 +9,7 @@ FROM dell/lamp:1.0
 - Don’t do RUN apt-get update on a single line. This will cause caching issues if the referenced archive gets updated, which will make your subsequent apt-get install fail without comment.
 - Avoid RUN apt-get upgrade or dist-upgrade, since many of the “essential” packages from the base images will fail to upgrade inside an unprivileged container.
 - Put long or complex RUN statements on multiple lines separated with backslashes. (Ex: apt-get update )
-- The `RUN` instruction, try to combine commands that are part of one cohesive operation. The one RUN instruction will mean only one layer gets used.
+- The `RUN` instruction should combine commands that are part of one cohesive operation. The one RUN instruction will mean only one layer gets used.
 ```
 RUN apt-get update && apt-get install -yq \
    build-essential \ 

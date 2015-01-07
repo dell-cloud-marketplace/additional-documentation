@@ -1,10 +1,27 @@
+# Docker Best Practises
+
 - Use Ubuntu trusty if possible (FROM ubuntu:trusty)
 - Add Dell Cloud Market Place as maintainer for each image (MAINTAINER Dell Cloud Market Place <Cloud_Marketplace@dell.com>)
-- Use a specific version for the base image (for example : FROM dell/lamp:1.0)
+- Base images should always detail the repository and the specific tag the image is based on.
+```
+FROM dell/lamp:1.0
+```
 - Don’t do RUN apt-get update on a single line. This will cause caching issues if the referenced archive gets updated, which will make your subsequent apt-get install fail without comment.
 - Avoid RUN apt-get upgrade or dist-upgrade, since many of the “essential” packages from the base images will fail to upgrade inside an unprivileged container.
 - Put long or complex RUN statements on multiple lines separated with backslashes. (Ex: apt-get update )
-- Minimize the number of layers by using a single RUN for multiple commands with the same logic. Combine these commands with &&.
+- The RUN instruction, try to combine commands that are part of one cohesive operation. The one RUN instruction will mean only one layer gets used.
+```
+RUN apt-get update && apt-get install -yq \
+   build-essential \ 
+   libcurl4-openssl-dev \
+   libreadline-dev \
+   libssl-dev \
+   libyaml-dev \
+   libxml2-dev \
+   python-software-properties \
+   zlib1g-dev
+```
+
 - Lines should not exceed 80 characters 
 - Expose the common, traditional ports used by the application
 - Try to put the commands likely to change at the end of the docker file

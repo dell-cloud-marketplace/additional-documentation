@@ -21,7 +21,7 @@ RUN apt-get update && apt-get install -yq \
    python-software-properties \
    zlib1g-dev
 ```
-- SSL support for web-based applications. This means that port 443 must be exposed in the Dockerfile.
+- Ensure SSL support is configured for web-based applications. This means that port 443 must be exposed in the Dockerfile.
 - Lines should not exceed 80 characters.
 - Expose the common, traditional ports used by the application (`EXPOSE`ports).
 - Try to put the commands likely to change at the end of the docker file.

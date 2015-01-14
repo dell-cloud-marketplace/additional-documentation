@@ -50,3 +50,16 @@ sudo docker run -d -p {ports} -v {volumes} -e {variables} {image_name} dell/{ima
 Based on (or Inspired by) [{based_image_name}]({based_image_github})
 
 Pre-built Image | [https://registry.hub.docker.com/u/dell/{image_name}](https://registry.hub.docker.com/u/dell/{image_name}) 
+
+
+## Verification/Testing Phase
+
+Make sure the Docker container has been deployed correctly by checking if the following criteria are met: 
+ 
+* The applications/websites URL mentioned in the documentation are accessible from a browser/cURL
+* HTTPS is enabled for web-based applications 
+** From the browser, the end-user is asked to accept a self-signed certificate "CN=www.dell.com, OU=MarketPlace, O=Dell, C=US"
+* Processes started from the application are listening on ports listed in the Docker file
+* When using volumes, mapped directories are correctly created on the local environment
+** Any files located under mapped directories such as logs, configuration files can be accessed or/and updated locally
+* If the docker container uses a database, this latter is accessible by passing a randomly-generated or predefined password
